@@ -1,0 +1,17 @@
+.profile__text {
+  text-align: center;
+  position: relative;
+}
+
+@media all and (max-width: 767px) {
+  .profile__text {
+    box-sizing: border-box;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .profile__text {
+    display: flex;
+    flex-direction: column;
+  }
+}

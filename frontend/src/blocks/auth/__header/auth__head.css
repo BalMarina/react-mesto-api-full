@@ -1,0 +1,18 @@
+.auth__head {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 23px;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .auth__head {
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 40px;
+        margin-bottom: 70px;
+    }
+}

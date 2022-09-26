@@ -1,0 +1,35 @@
+.profile {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media all and (min-width: 1280px) {
+  .profile {
+    /*тут в этом разрешении буду править шрифт*/
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 880px;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1279px) {
+  .profile {
+    max-width: calc(282px * 3 + 34px);
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .profile {
+    max-width: calc(282px * 2 + 17px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 282px;
+  }
+}

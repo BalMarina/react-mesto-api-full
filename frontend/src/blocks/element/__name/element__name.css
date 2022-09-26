@@ -1,0 +1,12 @@
+.element__name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0 21px 0 0;
+  max-width: calc(282px - 41px - 22px - 21px);
+  grid-area: "counter";
+  grid-row: span 2;
+}

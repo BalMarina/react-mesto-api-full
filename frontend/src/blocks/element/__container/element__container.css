@@ -1,0 +1,10 @@
+.element__container {
+  display: grid;
+  grid-template-areas:
+    "name like"
+    "name counter";
+  grid-template-columns: 1fr 19px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 22px 20px 25px 21px;
+}

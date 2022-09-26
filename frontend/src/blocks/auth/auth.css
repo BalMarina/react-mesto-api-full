@@ -1,0 +1,17 @@
+.auth {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 155px);
+    max-width: 360px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .auth {
+        height: calc(100vh - 130px);
+    }
+}

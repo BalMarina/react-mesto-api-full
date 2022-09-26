@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  max-width: calc(100% - 38px);
+  margin: 67px auto 0;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    margin-top: 48px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .footer {
+    max-width: calc(282px * 2 + 17px);
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1279px) {
+  .footer {
+    max-width: calc(282px * 3 + 34px);
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .footer {
+    max-width: 880px;
+  }
+}
