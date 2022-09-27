@@ -3,7 +3,7 @@ class Api {
     this._url = url;
     this._headers = {
       'Content-type': 'application/json',
-      'authorization': 'f36e7156-517e-4278-9213-56884bb1e4f8'
+      'Authorization': `Bearer ${localStorage.getItem('jwt')}`
     };
   }
 
@@ -82,5 +82,5 @@ class Api {
 
 }
 
-const api = new Api('https://mesto.nomoreparties.co/v1/cohort-43')
+const api = new Api('http://localhost:4000')
 export default api

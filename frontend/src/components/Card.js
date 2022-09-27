@@ -4,11 +4,11 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 function Card(props) {
     const card = props.card
     const { currentUser } = useContext(CurrentUserContext);
-    const isOwn = card.owner._id === currentUser._id;
+    const isOwn = card.owner === currentUser._id;
     const cardDeleteButtonClassName = (
         `element__trash-button ${isOwn ? '' : 'element__trash-button_hidden'}`
     );
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = Array.isArray(card.likes) ? card.likes.some(likeId => likeId === currentUser._id) : false;
     const cardLikeButtonClassName = (
         `element__like ${isLiked ? 'element__like_active' : ''}`
     );
@@ -43,7 +43,7 @@ function Card(props) {
                     className={cardLikeButtonClassName}
                     type="button">
                 </button>
-                <span className="element__likes-counter">{card.likes.length}</span>
+                <span className="element__likes-counter">{card.likes?.length || 0}</span>
             </div>
         </div>
     )

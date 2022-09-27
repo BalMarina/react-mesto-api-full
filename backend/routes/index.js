@@ -11,6 +11,11 @@ const { validitySignup, validitySignin } = require('../middlewares/validity-para
 router.use(userRouter);
 router.use(cardsRouter);
 
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 router.post('/signin', validitySignin, login);
 router.post('/signup', validitySignup, createUser);
 router.use('*', auth);

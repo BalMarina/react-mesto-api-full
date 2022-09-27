@@ -6,6 +6,7 @@ const UserAccessError = require('../errors/user-access-error');
 
 const getCards = (req, res, next) => {
   Card.find({})
+    .sort({ createdAt: 'desc' })
     .then((cards) => res.send(cards))
     .catch(next);
 };
@@ -14,7 +15,10 @@ const createCard = (req, res, next) => {
   const { name, link } = req.body;
   const ownerId = req.user._id;
   Card.create({ name, link, owner: ownerId })
-    .then((card) => res.send({ data: card }))
+    .then((card) => {
+      console.log(card);
+      return res.send(card);
+    })
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new InvalidDataError('Некорректные данные для создания карточки'));

@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'http://localhost:4000';
 export const headers = { 'Content-Type': 'application/json' }
 
 export function checkStatus(res) {

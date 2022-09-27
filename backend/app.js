@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const { errors } = require('celebrate');
 const mongoose = require('mongoose');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const corsMiddleware = require('./middlewares/cors');
 
 const { PORT = 4000 } = process.env;
 
@@ -24,6 +25,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 app.use(bodyParser.json());
 app.use(requestLogger);
+app.use(corsMiddleware);
 app.use(router);
 app.use(cookieParser());
 app.use(errorLogger);
