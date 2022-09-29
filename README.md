@@ -3,6 +3,6 @@
 - авторизации и регистрации пользователей, 
 - операции с карточками и пользователями. 
 
-#### IP: 130.193.43.244
+#### IP: 130.193.43.244 
 #### Frontend: https://balmary.nomoredomains.club
 #### Backend: https://api.balmary.nomoredomains.club
