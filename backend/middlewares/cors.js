@@ -1,7 +1,7 @@
 const allowedCors = [
   'http://localhost:3000',
-  'https://balmary.nomorepartiesxyz.ru',
-  'https://api.balmary.nomoredomains.icu',
+  'https://balmary.nomoredomains.club',
+  'https://api.balmary.nomoredomains.club',
 ];
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
