@@ -1,5 +1,5 @@
 const allowedCors = [
-  'http://localhost:3000',
+  'http://localhost:3001',
   'https://balmary.nomoredomains.club',
   'https://api.balmary.nomoredomains.club',
 ];

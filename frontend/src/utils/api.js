@@ -49,21 +49,12 @@ class Api {
   }
 
   changeLikeCardStatus(cardId, isLiked) {
-    return fetch(`${this._url}/cards/likes/${cardId}`, {
+    return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: isLiked ? "PUT" : "DELETE",
       headers: getHeaders(),
     })
       .then((res) => this._checkStatus(res))
   }
-
-  // dislikeCard(cardId) {
-  //   return fetch(`${this._url}/cards/likes/${cardId}`, {
-  //     method: 'DELETE',
-  //     headers: getHeaders(),
-  //   })
-  //     .then((res) => this._checkStatus(res))
-  // }
-
 
   deleteCard(cardId) {
     return fetch(`${this._url}/cards/${cardId}`, {
@@ -84,5 +75,5 @@ class Api {
 
 }
 
-const api = new Api(process.env.REACT_APP_API_URI || 'http://localhost:4000')
+const api = new Api(process.env.REACT_APP_API_URI || 'http://localhost:3000')
 export default api

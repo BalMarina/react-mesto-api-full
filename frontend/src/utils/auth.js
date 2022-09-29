@@ -1,4 +1,4 @@
-export const BASE_URL = process.env.REACT_APP_API_URI || 'http://localhost:4000';
+export const BASE_URL = process.env.REACT_APP_API_URI || 'http://localhost:3000';
 export const headers = { 'Content-Type': 'application/json' }
 
 export function checkStatus(res) {
