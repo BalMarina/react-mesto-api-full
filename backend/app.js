@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const corsMiddleware = require('./middlewares/cors');
 
-const { PORT = 4000 } = process.env;
+const { PORT = 3000 } = process.env;
 
 const router = require('./routes/index');
 const errorsHandler = require('./middlewares/errors-handler');
