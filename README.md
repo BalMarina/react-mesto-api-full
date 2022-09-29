@@ -4,5 +4,5 @@
 - операции с карточками и пользователями. 
 
 #### IP: 130.193.43.244
-#### Frontend: http://balmary.nomorepartiesxyz.ru
-#### Backend: api.balmary.nomoredomains.icu
+#### Frontend: https://balmary.nomoredomains.club
+#### Backend: https://api.balmary.nomoredomains.club
