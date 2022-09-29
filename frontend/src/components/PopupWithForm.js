@@ -2,7 +2,7 @@ import '../index.css';
 
 function PopupWithForm(props) {
   return (
-    <div className="page">
+    <div>
       <div className={`popup popup-${props.name} ${props.isOpen ? 'popup_opened' : ''}`}>
         <div className={"popup__container"}>
           <form
