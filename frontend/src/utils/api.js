@@ -1,10 +1,12 @@
+function getHeaders() {
+  return {
+    'Content-type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+  }
+}
 class Api {
   constructor(url) {
     this._url = url;
-    this._headers = {
-      'Content-type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('jwt')}`
-    };
   }
 
   _checkStatus(res) {
@@ -16,14 +18,14 @@ class Api {
 
   getUser() {
     return fetch(`${this._url}/users/me`, {
-      headers: this._headers
+      headers: getHeaders()
     })
       .then((res) => this._checkStatus(res))
   }
 
   addUser(userData) {
     return fetch(`${this._url}/users/me`, {
-      headers: this._headers,
+      headers: getHeaders(),
       method: 'PATCH',
       body: JSON.stringify(userData)
     })
@@ -32,14 +34,14 @@ class Api {
 
   getCards() {
     return fetch(`${this._url}/cards`, {
-      headers: this._headers
+      headers: getHeaders()
     })
       .then((res) => this._checkStatus(res))
   }
 
   addCard({ name, link, ...rest }) {
     return fetch(`${this._url}/cards`, {
-      headers: this._headers,
+      headers: getHeaders(),
       method: 'POST',
       body: JSON.stringify({ name: name, link: link, ...rest })
     })
@@ -49,7 +51,7 @@ class Api {
   changeLikeCardStatus(cardId, isLiked) {
     return fetch(`${this._url}/cards/likes/${cardId}`, {
       method: isLiked ? "PUT" : "DELETE",
-      headers: this._headers,
+      headers: getHeaders(),
     })
       .then((res) => this._checkStatus(res))
   }
@@ -57,7 +59,7 @@ class Api {
   // dislikeCard(cardId) {
   //   return fetch(`${this._url}/cards/likes/${cardId}`, {
   //     method: 'DELETE',
-  //     headers: this._headers,
+  //     headers: getHeaders(),
   //   })
   //     .then((res) => this._checkStatus(res))
   // }
@@ -66,7 +68,7 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this._url}/cards/${cardId}`, {
       method: 'DELETE',
-      headers: this._headers,
+      headers: getHeaders(),
     })
       .then((res) => this._checkStatus(res))
   }
@@ -74,7 +76,7 @@ class Api {
   changeAvatar(data) {
     return fetch(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: getHeaders(),
       body: JSON.stringify(data)
     })
       .then((res) => this._checkStatus(res))
